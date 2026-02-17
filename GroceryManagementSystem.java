@@ -10,7 +10,7 @@ public class GroceryManagementSystem {
  * @param stocks An integer array of items stocks in the inventory.
  */
 public static void printInventory(String[] names, double[] prices, int[] Stocks){
-    System.out.println("-----Inventory -----");
+    System.out.println("-----Inventory ------");
     for(int i=0; i<names.length; i++){
         if(names[i]!=null){
             System.out.println("Items: "+names[i]+" | Price: $"+prices[i]+" | Stocks: "+Stocks[i]);            
