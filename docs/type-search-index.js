@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"CS3354_assignment1_18","l":"GroceryManagementSystem"}];updateSearchResults();
