@@ -1,29 +1,54 @@
-package CS3354_assignment1_18;
+package GroceryManagementSystem;
 
+import java.util.Scanner;
 public class GroceryManagementSystem {
-    /***
-     * Restocks an item in the grocery store by iterating through to find the target.
-     * If the target is not found then it will print "Item not found."
-     *
-     * @param names A string array of item names in the inventory.
-     * @param stocks An integer array of item stocks in the inventory.
-     * @param target A string containing the name of the item to be restocked.
-     * @param amount An integer containing the amount that will be restocked.
-     */
-    public static void restockItem(String[] names, int[] stocks, String target, int amount)
-    {
-        boolean foundItem = false;
-        for(int i = 0; i < names.length; i++)
-        {
-            if(names[index].equals(target))
-            {
-                stocks[index] += amount;
-                foundItem = true;
+    //Fucntions: 
+    
+    // public static void restockItem(String[] names, int[] stocks, String target, int amount);
+    // adds x amount into inventory list for y item
+
+    // public static void printInventory(String[] names, double[] prices, int[] stocks);
+    // prints the list of items in inventroy
+
+    public static void main(String[] args) {
+        // In the main method, use a Scanner and a while(true) loop to create a menu.
+        // Integration: Call the methods written in the previous two tasks above based on the user's 
+        // input (1 for View, 2 for Restock, 3 to Exit)  
+
+        String[] itemNames = new String[10];
+        double[] itemPrices = new double[10];
+        int[] itemStocks = new int[10];
+
+        Scanner keyboardScanner = new Scanner(System.in);
+        int input; 
+        String item;
+        int amount; 
+        while(input != 3){
+            System.out.println("1 for View inventroy");
+            System.out.println("2 for Restock item");
+            System.out.println("3 to Exit");
+            System.out.println("Enter command:");
+            input = keyboardScanner.nextInt();
+            switch (input){
+                case 1:{
+                    printInventory(itemNames, itemPrices, itemStocks);
+                    break;
+                }
+                case 2:{
+                    System.out.println("What is target item?");
+                    item = keyboardScanner.nextLine();
+                    System.out.println("What is the amount being restocked?");
+                    amount = keyboardScanner.nextInt();
+                    restockItem(itemNames, itemStocks, item, amount);
+                    break;
+                }
+                case 3:{
+                    System.out.println("Quitting program");
+                    break;
+                }
             }
-        }
-        if(!foundItem)
-        {
-            System.out.println("Item not found.");
-        }
+        }    
+        
     }
+
 }
