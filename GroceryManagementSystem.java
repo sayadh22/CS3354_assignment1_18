@@ -1,20 +1,26 @@
 package CS3354_assignment1_18;
 
-public class GroceryManagementSystem {
 /**
- * Print the inventory of the grocery store, showing only non-empty items.
- * slots that aren't empty (e.g., if (names[i] != null)).
- * 
- * @param names An string array of items name in the inventory.
- * @param prices An doublearray of items price in the inventary.
- * @param stocks An integer array of items stocks in the inventory.
+ * Utility class for displaying grocery inventory information.
  */
-public static void printInventory(String[] names, double[] prices, int[] Stocks){
-    System.out.println("-----Inventory ------");
-    for(int i=0; i<names.length; i++){
-        if(names[i]!=null){
-            System.out.println("Items: "+names[i]+" | Price: $"+prices[i]+" | Stocks: "+Stocks[i]);            
+public class GroceryManagementSystem {
+
+    /**
+     * Prints all non-empty inventory entries.
+     * <p>
+     * Each printed line includes item name, price, and stock quantity.
+     * Entries with a {@code null} name are skipped.
+     *
+     * @param names item names
+     * @param prices item prices
+     * @param stocks item stock quantities
+     */
+    public static void printInventory(String[] names, double[] prices, int[] stocks) {
+        System.out.println("-----Inventory ------");
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] != null) {
+                System.out.println("Items: " + names[i] + " | Price: $" + prices[i] + " | Stocks: " + stocks[i]);
+            }
         }
     }
-}
 }
